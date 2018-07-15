@@ -1,0 +1,4 @@
+<launch>
+ 	<include file="$(find turtlebot_stage)/launch/turtlebot_in_stage.launch"/> 
+ 	<node name="free_space_navigation" pkg="gaitech_edu" type="free_space_navigation_node" output="screen"/>
+</launch>
