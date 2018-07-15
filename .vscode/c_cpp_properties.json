@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "/home/riotu/catkin_ws/devel/include",
+                    "/opt/ros/kinetic/include",
+                    "/home/riotu/catkin_ws/src/ros_essentials_cpp/include",
+                    "/usr/include"
+                ]
+            },
+            "includePath": [
+                "/home/riotu/catkin_ws/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/riotu/catkin_ws/src/ros_essentials_cpp/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 3
+}
