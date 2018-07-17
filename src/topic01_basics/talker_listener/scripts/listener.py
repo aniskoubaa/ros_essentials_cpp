@@ -2,8 +2,9 @@
 import rospy
 from std_msgs.msg import String
 
-def callback(data):
-    rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
+def callback(message):
+    #get_caller_id(): Get fully resolved name of local node
+    rospy.loginfo(rospy.get_caller_id() + "I heard %s", message.data)
     
 def listener():
 
