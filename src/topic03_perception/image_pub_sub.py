@@ -33,7 +33,7 @@ def main(args):
   #image_topic="/camera/rgb/image_raw/compressed"
   #for usb cam
   #image_topic="/usb_cam/image_raw"
-  image_sub = rospy.Subscriber("/camera/rgb/image_raw/",Image, image_callback)
+  image_sub = rospy.Subscriber("/usb_cam/image_raw",Image, image_callback)
   try:
     rospy.spin()
   except KeyboardInterrupt:

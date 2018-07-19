@@ -3,7 +3,7 @@
 import numpy as np
 import cv2
 
-#image = np.zeros([600,800,1],'uint8')
+
 image = np.zeros((512,512,3), np.uint8)
 
 #cv2.circle(image, (image.shape[0]/2, image.shape[1]/2),63, (255,255,255), 5)

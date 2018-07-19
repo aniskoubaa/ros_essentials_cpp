@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-from riotu_ros_training.srv import AddTwoInts
-from riotu_ros_training.srv import AddTwoIntsRequest
-from riotu_ros_training.srv import AddTwoIntsResponse
+from ros_essentials_cpp.srv import AddTwoInts
+from ros_essentials_cpp.srv import AddTwoIntsRequest
+from ros_essentials_cpp.srv import AddTwoIntsResponse
 
 import rospy
 

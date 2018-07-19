@@ -2,9 +2,9 @@
 
 import sys
 import rospy
-from riotu_ros_training.srv import AddTwoInts
-from riotu_ros_training.srv import AddTwoIntsRequest
-from riotu_ros_training.srv import AddTwoIntsResponse
+from ros_essentials_cpp.srv import AddTwoInts
+from ros_essentials_cpp.srv import AddTwoIntsRequest
+from ros_essentials_cpp.srv import AddTwoIntsResponse
 
 def add_two_ints_client(x, y):
     rospy.wait_for_service('add_two_ints')
