@@ -249,26 +249,26 @@ void gridClean(){
 	setDesiredOrientation(0);
 	loop.sleep();
 
-	move(2, 9, true);
+	move(2.0, 9.0, true);
 	loop.sleep();
 	rotate(degrees2radians(10), degrees2radians(90), false);
 	loop.sleep();
-	move(2, 9, true);
+	move(2.0, 9.0, true);
 
 
 	rotate(degrees2radians(10), degrees2radians(90), false);
 	loop.sleep();
-	move(2, 1, true);
+	move(2.0, 1.0, true);
 	rotate(degrees2radians(10), degrees2radians(90), false);
 	loop.sleep();
-	move(2, 9, true);
+	move(2.0, 9.0, true);
 
 	rotate(degrees2radians(30), degrees2radians(90), true);
 	loop.sleep();
-	move(2, 1, true);
+	move(2.0, 1.0, true);
 	rotate(degrees2radians(30), degrees2radians(90), true);
 	loop.sleep();
-	move(2, 9, true);
+	move(2.0, 9.0, true);
 
 
 	double distance = getDistance(turtlesim_pose.x, turtlesim_pose.y, x_max, y_max);
