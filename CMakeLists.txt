@@ -19,7 +19,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate services in the 'srv' folder
- add_service_files(FILES AddTwoInts.srv)
+ add_service_files(
+   FILES 
+   AddTwoInts.srv
+   )
 
 ## Generate actions in the 'action' folder
 add_action_files(
@@ -72,3 +75,10 @@ add_executable(turtlesim_clean_node src/topic02_motion/turtlesim/robot_cleaner.c
 target_link_libraries (turtlesim_clean_node ${catkin_LIBRARIES})
 
 
+add_executable(add_two_ints_server src/topic01_basics/service/add_two_ints_server.cpp)
+target_link_libraries(add_two_ints_server ${catkin_LIBRARIES})
+add_dependencies(add_two_ints_server ros_essentials_cpp_gencpp)
+
+add_executable(add_two_ints_client src/topic01_basics/service/add_two_ints_client.cpp)
+target_link_libraries(add_two_ints_client ${catkin_LIBRARIES})
+add_dependencies(add_two_ints_client ros_essentials_cpp_gencpp)
