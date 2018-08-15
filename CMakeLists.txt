@@ -60,6 +60,14 @@ include_directories(
 )
 
 
+add_library(utility_lib src/topic04_perception02_laser/laserscan/utility_lib.cpp)
+
+#LaserScan
+add_library(laserscan_lib src/topic04_perception02_laser/laserscan/LaserScanner.cpp)
+target_link_libraries(laserscan_lib ${catkin_LIBRARIES})
+add_dependencies(laserscan_lib ${catkin_EXPORTED_TARGETS})
+target_link_libraries(laserscan_lib utility_lib)
+
 #talker
 add_executable(talker_node src/topic01_basics/talker_listener/talker.cpp)
 target_link_libraries (talker_node ${catkin_LIBRARIES})
@@ -82,3 +90,7 @@ add_dependencies(add_two_ints_server ros_essentials_cpp_gencpp)
 add_executable(add_two_ints_client src/topic01_basics/service/add_two_ints_client.cpp)
 target_link_libraries(add_two_ints_client ${catkin_LIBRARIES})
 add_dependencies(add_two_ints_client ros_essentials_cpp_gencpp)
+
+add_executable(scan_subscriber_cpp src/topic04_perception02_laser/scan_subscriber.cpp)
+target_link_libraries(scan_subscriber_cpp ${catkin_LIBRARIES})
+target_link_libraries(scan_subscriber_cpp laserscan_lib)

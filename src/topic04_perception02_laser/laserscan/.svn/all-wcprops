@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/robot_controller/!svn/ver/19/src/sensors/laserscan
+END
+LaserScan.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/robot_controller/!svn/ver/19/src/sensors/laserscan/LaserScan.h
+END
+LaserScan.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/robot_controller/!svn/ver/1/src/sensors/laserscan/LaserScan.cpp
+END
