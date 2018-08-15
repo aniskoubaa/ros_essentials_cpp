@@ -1,27 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <netdb.h> 
-#include <string>
 //include ros libraries
 #include <ros/ros.h>
-#include <geometry_msgs/Twist.h>
 #include "sensor_msgs/LaserScan.h"
-#include "sensor_msgs/PointCloud2.h"
-#include <nav_msgs/Odometry.h>
-#include <geometry_msgs/PoseWithCovarianceStamped.h>
-#include <tf/transform_datatypes.h>
-#include <tf/transform_listener.h>
-#include <nav_msgs/OccupancyGrid.h>
-#include <move_base_msgs/MoveBaseAction.h>
-#include <actionlib/client/simple_action_client.h>
-#include <kobuki_msgs/BumperEvent.h> 
-#include <kobuki_msgs/CliffEvent.h> 
-#include <kobuki_msgs/WheelDropEvent.h> 
+
+
 #include "utility_lib.h"
 using std::string;
 
