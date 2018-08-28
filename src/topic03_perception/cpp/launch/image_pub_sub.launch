@@ -1,0 +1,18 @@
+<launch>
+<node name="usb_camera_node" pkg="usb_cam" type="usb_cam_node" output="screen" >
+        <param name="video_device" value="/dev/video0" />
+        <param name="image_width" value="1280" />
+        <param name="image_height" value="720" />
+        <param name="pixel_format" value="yuyv" />
+        <remap from="image" to="/camera/image_raw"/>
+</node>
+<node name="image_view_node" pkg="image_view" type="image_view" output="screen" >
+        <remap from="image" to="/usb_camera_node/image_raw"/>
+</node>
+<node name="image_pub_sub_cpp" pkg="ros_essentials_cpp" type="image_pub_sub_cpp" output="screen" >
+        <remap from="image" to="/usb_camera_node/image_raw"/>
+</node>
+<node name="image_view2_node" pkg="image_view" type="image_view" output="screen" >
+        <remap from="image" to="/image_converter/output_video"/>
+</node>
+</launch>
