@@ -36,7 +36,7 @@ def move(speed, distance):
             velocity_message.linear.x =speed
             distance_moved = 0.0
             loop_rate = rospy.Rate(10) # we publish the velocity at 10 Hz (10 times a second)    
-            cmd_vel_topic='/turtle1/cmd_vel'
+            cmd_vel_topic='/cmd_vel'
             velocity_publisher = rospy.Publisher(cmd_vel_topic, Twist, queue_size=10)
 
             while True :
@@ -65,7 +65,7 @@ if __name__ == '__main__':
         rospy.init_node('turtlesim_motion_pose', anonymous=True)
 
         #declare velocity publisher
-        cmd_vel_topic='/turtle1/cmd_vel'
+        cmd_vel_topic='/cmd_vel'
         velocity_publisher = rospy.Publisher(cmd_vel_topic, Twist, queue_size=10)
         
         position_topic = "/turtle1/pose"

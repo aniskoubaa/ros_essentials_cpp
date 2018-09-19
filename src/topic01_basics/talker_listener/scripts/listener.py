@@ -2,7 +2,7 @@
 import rospy
 from std_msgs.msg import String
 
-def callback(message):
+def chatter_callback(message):
     #get_caller_id(): Get fully resolved name of local node
     rospy.loginfo(rospy.get_caller_id() + "I heard %s", message.data)
     
@@ -15,7 +15,7 @@ def listener():
     # run simultaneously.
     rospy.init_node('listener', anonymous=True)
 
-    rospy.Subscriber("chatter", String, callback)
+    rospy.Subscriber("chatter", String, chatter_callback)
 
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()

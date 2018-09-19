@@ -2,7 +2,7 @@
 <package format="2">
   <name>ros_essentials_cpp</name>
   <version>0.0.0</version>
-  <description>Package for Udemy Course Fundamental Concepts of Robot Operating System (ROS) (C++)</description>
+  <description>Package for Udemy Course ROS for Beginners Part I</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->

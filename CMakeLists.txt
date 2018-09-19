@@ -6,19 +6,18 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
-  message_generation
   actionlib_msgs
   cv_bridge
   image_transport
+  message_generation
 )
 
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+ add_message_files(
+   FILES
+   IoTSensor.msg 
+)
 
 ## Generate services in the 'srv' folder
  add_service_files(
@@ -46,7 +45,7 @@ add_action_files(
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ros_essentials_cpp
-  CATKIN_DEPENDS roscpp rospy std_msgs
+  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
   DEPENDS system_lib
 )
 
