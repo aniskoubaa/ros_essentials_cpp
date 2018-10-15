@@ -28,7 +28,7 @@ def convert_gray_to_binary(gray_image, adaptive, show):
     return binary_image    
 
 def getContours(binary_image):      
-    _, contours, hierarchy = cv2.findContours(binary_image, 
+    contours, hierarchy = cv2.findContours(binary_image, 
                                               cv2.RETR_TREE, 
                                                cv2.CHAIN_APPROX_SIMPLE)
     return contours

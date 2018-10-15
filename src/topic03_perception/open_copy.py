@@ -7,7 +7,7 @@ import numpy as np
 import cv2
  
 
-image_name = "tree"
+image_name = "flower"
 
 print 'read an image from file'
 img = cv2.imread("images/"+image_name+".jpg")

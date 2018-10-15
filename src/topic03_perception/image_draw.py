@@ -17,8 +17,8 @@ pts = pts.reshape((-1,1,2))
 cv2.polylines(image,[pts],True,(0,255,255))
 
 font = cv2.FONT_HERSHEY_SIMPLEX
-cv2.putText(image,'ROS, OpenCV',(10,500), font, 2,(255,255,255),2,cv2.LINE_AA)
-
+#cv2.putText(image,'ROS, OpenCV',(10,500), font, 2,(255,255,255),2,cv2.LINE_AA)
+cv2.putText(image,'OpenCV',(10,500), font, 4,(255,255,255),2)
 cv2.imshow("Image Panel",image)
 
 cv2.waitKey(0)

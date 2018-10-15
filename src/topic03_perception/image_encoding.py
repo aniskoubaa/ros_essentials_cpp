@@ -38,6 +38,7 @@ hsv = cv2.cvtColor(color_image, cv2.COLOR_BGR2HSV)
 h,s,v = cv2.split(hsv)
 hsv_image = np.concatenate((h,s,v),axis=1)
 cv2.imshow("Hue, Saturation, Value Image",hsv_image)
+cv2.imshow("HSV Image",hsv)
 
 
 print '------ converts an image to a grayscale ------'

@@ -15,10 +15,6 @@ def filter_color(rgb_image, lower_bound_color, upper_bound_color):
     hsv_image = cv2.cvtColor(rgb_image, cv2.COLOR_BGR2HSV)
     cv2.imshow("hsv image",hsv_image)
 
-    #find the upper and lower bounds of the yellow color (tennis ball)
-    yellowLower =(30, 150, 100)
-    yellowUpper = (50, 255, 255)
-
     #define a mask using the lower and upper bounds of the yellow color 
     mask = cv2.inRange(hsv_image, lower_bound_color, upper_bound_color)
 
@@ -27,11 +23,11 @@ def filter_color(rgb_image, lower_bound_color, upper_bound_color):
 
     
 
-def getContours(binary_image):      
+def getContours(binary_image):     
     #_, contours, hierarchy = cv2.findContours(binary_image, 
     #                                          cv2.RETR_TREE, 
     #                                           cv2.CHAIN_APPROX_SIMPLE)
-    _, contours, hierarchy = cv2.findContours(binary_image.copy(), 
+    contours, hierarchy = cv2.findContours(binary_image.copy(), 
                                             cv2.RETR_EXTERNAL,
 	                                        cv2.CHAIN_APPROX_SIMPLE)
     return contours
@@ -66,8 +62,8 @@ def get_contour_center(contour):
     return cx, cy
 
 def detect_ball_in_a_frame(image_frame):
-    yellowLower =(30, 150, 100)
-    yellowUpper = (50, 255, 255)
+    yellowLower =(30, 100, 50)
+    yellowUpper = (60, 255, 255)
     rgb_image = image_frame
     binary_image_mask = filter_color(rgb_image, yellowLower, yellowUpper)
     contours = getContours(binary_image_mask)
@@ -76,8 +72,8 @@ def detect_ball_in_a_frame(image_frame):
 
 
 def main():
-    #video_capture = cv2.VideoCapture(0)
-    video_capture = cv2.VideoCapture('video/tennis-ball-video.mp4')
+    video_capture = cv2.VideoCapture(0)
+    #video_capture = cv2.VideoCapture('video/tennis-ball-video.mp4')
 
     while(True):
         ret, frame = video_capture.read()

@@ -38,7 +38,7 @@ print (img[10].shape)
 print 'pixel at raw 10 and column 5 (img[10, 5])'
 print (img[10, 5])
 print (img[10] [5])
-print 'pixel at raw 10 and column 5 (img[0, 0])'
+print 'pixel at raw 0 and column 0 (img[0, 0])'
 print (img[0, 0])
 print (img[0] [0])
 
