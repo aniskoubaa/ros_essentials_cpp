@@ -32,7 +32,7 @@ void setDesiredOrientation (double desired_angle_radians);
 void poseCallback(const turtlesim::Pose::ConstPtr & pose_message);
 void moveGoal(turtlesim::Pose  goal_pose, double distance_tolerance);
 void gridClean();
-void spiralClean();
+void spiralClean(double rk, double wk);
 
 int main(int argc, char **argv)
 {
@@ -47,62 +47,13 @@ int main(int argc, char **argv)
 	velocity_publisher = n.advertise<geometry_msgs::Twist>("/turtle1/cmd_vel", 1000);
 	pose_subscriber = n.subscribe("/turtle1/pose", 10, poseCallback);
 
-	//ros::Rate loop_rate(10);
-
-
-
 	/** test your code here **/
 	ROS_INFO("\n\n\n******START TESTING************\n");
-	/*cout<<"enter speed: ";
-	cin>>speed;
-	cout<<"enter distance: ";
-	cin>>distance;
-	cout<<"forward?: ";
-	cin>>isForward;
-	move(speed, distance, isForward);
-
-	cout<<"enter angular velocity (degree/sec): ";
-	cin>>angular_speed;
-	cout<<"enter desired angle (degrees): ";
-	cin>>angle;
-	cout<<"clockwise ?: ";
-	cin>>clockwise;
-	rotate(degrees2radians(angular_speed), degrees2radians(angle), clockwise);
-	 */
 	ros::Rate loop_rate(0.5);
-	/*setDesiredOrientation(degrees2radians(120));
-
-	loop_rate.sleep();
-	setDesiredOrientation(degrees2radians(-60));
-	loop_rate.sleep();
-	setDesiredOrientation(degrees2radians(0));*/
-
-	/*turtlesim::Pose goal_pose;
-	goal_pose.x=1;
-	goal_pose.y=1;
-	goal_pose.theta=0;
-	moveGoal(goal_pose, 0.01);
-	loop_rate.sleep();
-	 */
-
 	//gridClean();
+	//loop.sleep();
 
-	ros::Rate loop(0.5);
-	turtlesim::Pose pose;
-	pose.x=1;
-	pose.y=1;
-	pose.theta=0;
-	moveGoal(pose, 0.01);
-
-	pose.x=6;
-	pose.y=6;
-	pose.theta=0;
-	moveGoal(pose, 0.01);
-
-
-
-	loop.sleep();
-	//spiralClean();
+	spiralClean(0,4);
 
 	ros::spin();
 
@@ -276,25 +227,15 @@ void gridClean(){
 }
 
 
-void spiralClean(){
+void spiralClean(double rk, double wk){
 	geometry_msgs::Twist vel_msg;
-	double count =0;
 
-	double constant_speed=4;
-	double vk = 1;
-	double wk = 2;
-	double rk = 0.5;
 	ros::Rate loop(1);
 
 	do{
 		rk=rk+1.0;
 		vel_msg.linear.x =rk;
-		vel_msg.linear.y =0;
-		vel_msg.linear.z =0;
-		//set a random angular velocity in the y-axis
-		vel_msg.angular.x = 0;
-		vel_msg.angular.y = 0;
-		vel_msg.angular.z =constant_speed;//((vk)/(0.5+rk));
+		vel_msg.angular.z =wk;
 
 		cout<<"vel_msg.linear.x = "<<vel_msg.linear.x<<endl;
 		cout<<"vel_msg.angular.z = "<<vel_msg.angular.z<<endl;
@@ -302,10 +243,7 @@ void spiralClean(){
 		ros::spinOnce();
 
 		loop.sleep();
-		//vk = vel_msg.linear.x;
-		//wk = vel_msg.angular.z;
-		//rk = vk/wk;
-		cout<<rk<<", "<<vk <<", "<<wk<<endl;
+
 	}while((turtlesim_pose.x<10.5)&&(turtlesim_pose.y<10.5));
 	vel_msg.linear.x =0;
 	velocity_publisher.publish(vel_msg);
