@@ -7,10 +7,10 @@ import math
 import time
 from std_srvs.srv import Empty
 
-x=0
-y=0
-z=0
-yaw=0
+x = 0
+y = 0
+z = 0
+yaw = 0
 
 def poseCallback(pose_message):
     global x
