@@ -1,4 +1,4 @@
-# ROS For Beginners: Basics, Motion, and OpenCV - Udemy Course
+# ROS For Beginners: Basics, Motion, and OpenCV - Udemy Course (ROS Noetic Version)
 
 This repository contains the source code and materials for the Udemy course **ROS For Beginners: Basics, Motion, and OpenCV**. Learn the fundamentals of the Robot Operating System (ROS) and gain practical experience in robot motion and perception using OpenCV.
 
